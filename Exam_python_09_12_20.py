@@ -28,10 +28,6 @@ print ("   Si la lettre s'affiche en rouge, elle est à la bonne place")
 #print ("   Si elle s'affiche en jaune, elle n'est pas à la bonne place")
 print ("   Si elle s'affiche en bleu, elle n'est meme pas dans le mot \n Bon jeu!")
 
-choix=str(input("Voulez vous afficher les mots proposés? Tapez oui ou non pour choisir \n"))
-if (choix == "oui" or "Oui"):
-    print (tableaumot)
-
 #programme
 while (tour <= 8 and victoire != True):
     motjoueur=str(input("Quel mot voulez vous essayer? \n"))
