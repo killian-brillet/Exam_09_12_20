@@ -14,7 +14,6 @@ def couleurmot (motjoueur, motrandom):
         #        print (Back.YELLOW + motjoueur[i], end=" ")
         if (motjoueur[i] != motrandom[i]):
             print (Back.BLUE + motjoueur[i], end=" ")
-        print (Style.RESET_ALL)
     return motjoueur, motrandom
 
 #variables
@@ -29,11 +28,16 @@ print ("   Si la lettre s'affiche en rouge, elle est à la bonne place")
 #print ("   Si elle s'affiche en jaune, elle n'est pas à la bonne place")
 print ("   Si elle s'affiche en bleu, elle n'est meme pas dans le mot \n Bon jeu!")
 
+choix=str(input("Voulez vous afficher les mots proposés? Tapez oui ou non pour choisir \n"))
+if (choix == "oui" or "Oui"):
+    print (tableaumot)
+
 #programme
 while (tour <= 8 and victoire != True):
     motjoueur=str(input("Quel mot voulez vous essayer? \n"))
     if (len(motjoueur) == 6):
         couleurmot(motjoueur,motrandom)
+        print (Style.RESET_ALL)
         tour = tour + 1
         if (motjoueur==motrandom):
             victoire = True
