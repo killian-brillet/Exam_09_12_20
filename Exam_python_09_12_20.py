@@ -19,6 +19,11 @@ motrandom=random.choice(tableaumot)
 victoire = False
 tour = 1
 
+print (" Bienvenue à Motus! vous devez deviner le mot en enoncant d'autres mots.")
+print ("   Si la lettre s'affiche en rouge, elle est à la bonne place")
+print ("   Si elle s'affiche en jaune, elle n'est pas à la bonne place")
+print ("   Si elle s'affiche en bleu, elle n'est meme pas dans le mot \n Bon jeu!")
+
 while (tour <= 8 and victoire != True):
     motjoueur=str(input("Quel mot voulez vous essayer? \n"))
     if (len(motjoueur) == 6):
