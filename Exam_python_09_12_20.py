@@ -9,6 +9,8 @@ def couleurmot (motjoueur, motrandom):
             print (Back.RED + motjoueur[i], end=" ")
         if (motjoueur[i] !=  motrandom[i]):
             print (Back.BLUE + motjoueur[i], end=" ")
+        #if (motjoueur[i] != motrandom[i] and ):
+        #    print (Back.YELLOW + motjoueur[i], end=" ")
         print (Style.RESET_ALL)
     return motjoueur, motrandom
 
@@ -17,7 +19,6 @@ motrandom=random.choice(tableaumot)
 victoire = False
 tour = 1
 
-print(motrandom)
 while (tour <= 8 and victoire != True):
     motjoueur=str(input("Quel mot voulez vous essayer? \n"))
     if (len(motjoueur) == 6):
