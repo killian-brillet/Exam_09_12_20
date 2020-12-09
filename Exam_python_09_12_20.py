@@ -4,41 +4,30 @@ from colorama import Fore, Back, Style
 import random
 
 def conditionvictoire (victoire):
-    if (motjoueur == motchoisi):
+    if (motjoueur == motrandom):
         victoire = 1
 
-def tableaumotrandom (motrandom):
-
-def tableaumotjoueur ():
-
-
 tableaumot = ["castor","cinema","citron","sapins","python","lettre","violet","marron","orange","avions"]
-motjoueur=[" "," "," "," "," "," "]
 motrandom=random.choice(tableaumot)
-
 victoire = 0
 tour = 1
 
 print(motrandom)
-print(motrandom[1])
-while (tour < 10):
-    motjoueur=input("Quel mot voulez vous essayer?")
+while (tour < 3):
+    motjoueur=str(input("Quel mot voulez vous essayer?"))
+    
     for i in range (0,6):
-        if (motjoueur[i] == motchoisi[i]):
+        if (motjoueur[i] == motrandom[i]):
             print (Back.RED + motjoueur[i], end=" ")
-        if (motjoueur[i] !=  motchoisi[i]):
+        if (motjoueur[i] !=  motrandom[i]):
             print (Back.BLUE + motjoueur[i], end=" ")
-    print (motjoueur)
+        print (Style.RESET_ALL)
     tour = tour + 1
     conditionvictoire (victoire)
-    if (victoire == 1):
-        print("Bravo vous avez gagné")
-        input()
+    print ("Victoire =",victoire)
+
 
 if (victoire == 0):
-    print("Vous avez perdu, le mot etait ", motchoisi)
+    print("Vous avez perdu, le mot etait", Back.BLUE + motrandom)
     
-
-print(motchoisi)
-print(mot)
 input()
