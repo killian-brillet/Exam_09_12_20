@@ -2,32 +2,36 @@ from colorama import init
 init() 
 from colorama import Fore, Back, Style 
 import random
-
-def conditionvictoire (victoire):
-    if (motjoueur == motrandom):
-        victoire = 1
-
-tableaumot = ["castor","cinema","citron","sapins","python","lettre","violet","marron","orange","avions"]
-motrandom=random.choice(tableaumot)
-victoire = 0
-tour = 1
-
-print(motrandom)
-while (tour < 3):
-    motjoueur=str(input("Quel mot voulez vous essayer?"))
     
-    for i in range (0,6):
+def couleurmot (motjoueur, motrandom):
+    for i in range (len(motjoueur)):
         if (motjoueur[i] == motrandom[i]):
             print (Back.RED + motjoueur[i], end=" ")
         if (motjoueur[i] !=  motrandom[i]):
             print (Back.BLUE + motjoueur[i], end=" ")
         print (Style.RESET_ALL)
-    tour = tour + 1
-    conditionvictoire (victoire)
-    print ("Victoire =",victoire)
+    return motjoueur, motrandom
 
+tableaumot = ["castor","cinema","citron","sapins","python","lettre","violet","marron","orange","avions"]
+motrandom=random.choice(tableaumot)
+victoire = False
+tour = 1
 
-if (victoire == 0):
+print(motrandom)
+while (tour <= 8 and victoire != True):
+    motjoueur=str(input("Quel mot voulez vous essayer? \n"))
+    if (len(motjoueur) == 6):
+        couleurmot(motjoueur,motrandom)
+        tour = tour + 1
+        if (motjoueur==motrandom):
+            victoire = True
+    else:
+        print(" \nVeuillez rentrer un mot à 6 lettres \n")
+
+if (victoire == True):
+    print("Vous avez gagné, le mot etait bien", Back.RED + motrandom)
+
+if (victoire == False):
     print("Vous avez perdu, le mot etait", Back.BLUE + motrandom)
     
 input()
