@@ -17,7 +17,7 @@ def couleurmot (motjoueur, motrandom):
     return motjoueur, motrandom
 
 #variables
-tableaumot = ["castor","cinema","citron","sapins","python","lettre","violet","marron","orange","cactus"]
+tableaumot = ["castor","toucan","chaise","sapins","python","lettre","violet","marron","orange","cactus"]
 motrandom=random.choice(tableaumot)
 victoire = False
 tour = 1
